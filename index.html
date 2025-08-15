@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAKA GHOR - Earn Money</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src='//libtl.com/sdk.js' data-zone='9717336' data-sdk='show_9717336'></script>
+    <script src='//libtl.com/sdk.js' data-zone='9706744' data-sdk='show_9706744'></script>
+    <script src='//libtl.com/sdk.js' data-zone='9697264' data-sdk='show_9697264'></script>
+    <style>
+        :root {
+            --primary-color: #4a148c;
+            --secondary-color: #7b1fa2;
+            --accent-color: #e91e63;
+            --light-color: #f3e5f5;
+            --dark-color: #12005e;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --info-color: #2196f3;
+            --gold-color: #ffd700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding-top: 120px;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 15px;
+        }
+        
+        /* Updated Developer Name Styles */
+        .developer-name {
+            position: fixed;
+            top: 5px;
+            right: 5px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 10px;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-weight: bold;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            z-index: 90;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .app-logo {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--gold-color), #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .tagline {
+            color: #aaa;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        
+        .balance-card {
+            background: linear-gradient(135deg, #2c3e50, #4a148c);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .balance-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        .balance-title {
+            font-size: 16px;
+            margin-bottom: 5px;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+        }
+        
+        .balance-title i {
+            margin-right: 8px;
+            color: var(--gold-color);
+        }
+        
+        .balance-amount {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            color: var(--gold-color);
+        }
+        
+        .progress-container {
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            height: 10px;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, var(--accent-color), #ff9800);
+            height: 100%;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(255,0,0,0.3);
+        }
+        
+        .progress-text {
+            font-size: 12px;
+            text-align: right;
+            color: #ccc;
+        }
+        
+        .ad-container {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--gold-color);
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #7b1fa2, #4a148c);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 5px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn i {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: var(--gold-color);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #4a6583, #2c3e50);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #c2185b, #880e4f);
+        }
+        
+        .btn-info {
+            background: linear-gradient(135deg, #2196f3, #0d47a1);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .ad-completion-message {
+            background: linear-gradient(135deg, var(--success-color), #2e7d32);
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: slideIn 0.5s ease, fadeOut 0.5s ease 2.5s forwards;
+            display: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .back-btn {
+            background: linear-gradient(135deg, #4a148c, #7b1fa2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .back-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .ad-view {
+            background: rgba(30, 30, 50, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .ad-view img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .ad-close-btn {
+            background: linear-gradient(135deg, var(--accent-color), #c2185b);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .ad-close-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            padding: 25px;
+            animation: modalFadeIn 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #fff;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+        
+        .modal-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--gold-color);
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ddd;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 18px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            font-size: 16px;
+            color: white;
+        }
+        
+        .form-control::placeholder {
+            color: #aaa;
+        }
+        
+        .select-control {
+            width: 100%;
+            padding: 12px 18px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            font-size: 16px;
+            appearance: none;
+            color: white;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='gold' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 20px;
+        }
+        
+        .note-box {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .note-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--gold-color);
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        .history-item {
+            background: rgba(30, 30, 50, 0.6);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .history-date {
+            font-weight: bold;
+            color: var(--gold-color);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .history-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #ddd;
+        }
+        
+        .referral-box {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .referral-code {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--gold-color);
+            margin: 20px 0;
+            word-break: break-all;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .referral-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            min-width: 100px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--gold-color);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #ccc;
+            margin-top: 5px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .claim-btn {
+            background: linear-gradient(135deg, var(--success-color), #2e7d32);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            width: 100%;
+            display: none;
+        }
+        
+        .claim-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .task-item {
+            background: rgba(30, 30, 50, 0.6);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .task-info {
+            flex: 1;
+        }
+        
+        .task-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        
+        .task-reward {
+            font-size: 14px;
+            color: var(--gold-color);
+        }
+        
+        .task-status {
+            font-size: 12px;
+            color: #aaa;
+        }
+        
+        .banner-ad {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        
+        .countdown-timer {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.7);
+            color: var(--gold-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            animation: pulse 1s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { box-shadow: 0 0 5px rgba(255,215,0,0.5); }
+            to { box-shadow: 0 0 20px rgba(255,215,0,0.8); }
+        }
+        
+        .warning-box {
+            background: rgba(192, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            border: 1px solid rgba(255,0,0,0.3);
+            text-align: center;
+        }
+        
+        .warning-title {
+            font-weight: bold;
+            color: #ff5252;
+            margin-bottom: 5px;
+        }
+        
+        /* Banner ad container */
+        .banner-ad-container {
+            width: 100%;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.2);
+            border-radius: 15px;
+            padding: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            min-height: 100px;
+        }
+        
+        .banner-ad-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        .banner-ad-placeholder i {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        /* Video countdown */
+        .video-countdown {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: #ff5252;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(255,0,0,0.3);
+        }
+        
+        /* Mobile-friendly adjustments */
+        @media (max-width: 480px) {
+            body {
+                padding-top: 100px;
+            }
+            
+            .fixed-header {
+                padding: 15px 0;
+            }
+            
+            .app-logo {
+                font-size: 26px;
+            }
+            
+            .btn-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .btn {
+                padding: 15px 5px;
+                font-size: 14px;
+            }
+            
+            .btn i {
+                font-size: 22px;
+            }
+            
+            .developer-name {
+                font-size: 9px;
+                padding: 2px 8px;
+            }
+        }
+        
+        /* New styles for video player */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 5;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .video-instructions {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .video-start-btn {
+            background: linear-gradient(135deg, var(--success-color), #2e7d32);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .video-start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Updated Developer Name - Smaller and in corner -->
+    <div class="developer-name">MD SABBIR</div>
+    
+    <!-- Fixed Header -->
+    <div class="fixed-header">
+        <div class="app-logo">TAKA GHOR</div>
+        <div class="tagline">Earn Money Easily & Securely</div>
+    </div>
+    
+    <!-- Home Page -->
+    <div id="home-page" class="page">
+        <div class="container">
+            <div class="balance-card">
+                <div class="balance-title">
+                    <i class="fas fa-wallet"></i> Your Balance
+                </div>
+                <div class="balance-amount" id="balance-amount">0 Points</div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="progress-text" id="progress-text">0/5000 Points to withdraw</div>
+            </div>
+            
+            <div id="ad-completion-message" class="ad-completion-message">
+                <i class="fas fa-check-circle"></i> বিজ্ঞাপন দেখা সম্পূর্ণ হয়েছে! 100 পয়েন্ট যোগ করা হয়েছে।
+            </div>
+            
+            <div class="ad-container">
+                <div class="section-title">
+                    <i class="fas fa-ad"></i> বিজ্ঞাপন দেখুন & উপার্জন করুন
+                </div>
+                <div class="btn-grid">
+                    <button class="btn" onclick="showMonetagAd(9717336)">
+                        <i class="fas fa-ad"></i>
+                        বিজ্ঞাপন #1
+                    </button>
+                    <button class="btn" onclick="showMonetagAd(9706744)">
+                        <i class="fas fa-ad"></i>
+                        বিজ্ঞাপন #2
+                    </button>
+                    <button class="btn" onclick="showMonetagAd(9697264)">
+                        <i class="fas fa-ad"></i>
+                        বিজ্ঞাপন #3
+                    </button>
+                </div>
+                <div class="progress-text">আজকের দেখা বিজ্ঞাপন: <span id="ads-watched">0</span>/500</div>
+            </div>
+            
+            <div class="section-title">
+                <i class="fas fa-bars"></i> মেনু
+            </div>
+            <div class="menu-grid">
+                <button class="btn btn-secondary" onclick="showPage('tasks-page')">
+                    <i class="fas fa-tasks"></i>
+                    টাস্ক
+                </button>
+                <button class="btn btn-success" onclick="showPage('withdraw-page')">
+                    <i class="fas fa-money-bill-wave"></i>
+                    উত্তোলন
+                </button>
+                <button class="btn btn-info" onclick="showPage('history-page')">
+                    <i class="fas fa-history"></i>
+                    ইতিহাস
+                </button>
+                <button class="btn btn-warning" onclick="showPage('referral-page')">
+                    <i class="fas fa-users"></i>
+                    রেফারেল
+                </button>
+            </div>
+            
+            <button class="btn btn-info" onclick="window.open('https://t.me/TakaGhor_Official', '_blank')" style="width: 100%; margin-bottom: 15px;">
+                <i class="fab fa-telegram"></i> টেলিগ্রাম চ্যানেল
+            </button>
+            
+            <button class="btn btn-danger" onclick="resetApp()">
+                <i class="fas fa-redo"></i>
+                রিসেট করুন
+            </button>
+            
+            <div style="height: 20px;"></div>
+        </div>
+    </div>
+    
+    <!-- Tasks Page -->
+    <div id="tasks-page" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home-page')">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            
+            <div class="section-title">
+                <i class="fas fa-tasks"></i> টাস্ক সম্পূর্ণ করুন
+            </div>
+            
+            <div class="ad-view">
+                <!-- YouTube Video Container -->
+                <div class="video-container">
+                    <iframe id="youtube-video" src="" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                    </iframe>
+                    <div id="video-overlay" class="video-overlay">
+                        <div class="video-instructions">ভিডিওটি দেখতে নিচের বাটনটি ক্লিক করুন</div>
+                        <button class="video-start-btn" onclick="startVideo()">
+                            <i class="fas fa-play"></i> ভিডিও শুরু করুন
+                        </button>
+                    </div>
+                    <div id="video-countdown" class="video-countdown">30</div>
+                </div>
+                
+                <!-- Banner Ad Container -->
+                <div class="banner-ad-container">
+                    <div class="banner-ad-placeholder" id="banner-ad-placeholder">
+                        <i class="fas fa-sync fa-spin"></i>
+                        <p>ব্যানার বিজ্ঞাপন লোড হচ্ছে...</p>
+                    </div>
+                </div>
+                
+                <p>পুরো ভিডিওটি দেখুন এবং পুরস্কার পান</p>
+                <button id="claim-btn" class="claim-btn" onclick="claimTaskReward()">
+                    <i class="fas fa-coins"></i> 50 পয়েন্ট দাবি করুন
+                </button>
+                <button class="ad-close-btn" onclick="completeTask()">
+                    <i class="fas fa-times"></i> টাস্ক বন্ধ করুন
+                </button>
+            </div>
+            
+            <div class="section-title">
+                <i class="fas fa-list"></i> উপলব্ধ টাস্ক
+            </div>
+            
+            <div id="tasks-list">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Withdraw Page -->
+    <div id="withdraw-page" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home-page')">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            
+            <div class="section-title">
+                <i class="fas fa-money-bill-wave"></i> টাকা উত্তোলন করুন
+            </div>
+            
+            <div class="ad-view">
+                <div class="form-group">
+                    <label class="form-label">পেমেন্ট পদ্ধতি</label>
+                    <select id="payment-method" class="select-control">
+                        <option value="">পেমেন্ট পদ্ধতি নির্বাচন করুন</option>
+                        <option value="bkash">বিকাশ</option>
+                        <option value="nagad">নগদ</option>
+                        <option value="rocket">রকেট</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">অ্যাকাউন্ট নম্বর</label>
+                    <input type="text" id="account-number" class="form-control" placeholder="আপনার অ্যাকাউন্ট নম্বর লিখুন">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">উত্তোলনের পরিমাণ (পয়েন্ট)</label>
+                    <input type="number" id="withdraw-amount" class="form-control" placeholder="ন্যূনতম 5000 পয়েন্ট">
+                </div>
+                
+                <div class="note-box">
+                    <div class="note-title">উত্তোলনের তথ্য</div>
+                    <p>5000 পয়েন্ট = 20 টাকা</p>
+                    <p>ন্যূনতম উত্তোলন: 5000 পয়েন্ট</p>
+                    <p>প্রক্রিয়াকরণের সময়: 24-48 ঘন্টা</p>
+                </div>
+                
+                <button class="btn btn-success" onclick="confirmWithdrawal()" style="width: 100%;">
+                    <i class="fas fa-check-circle"></i> উত্তোলন নিশ্চিত করুন
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- History Page -->
+    <div id="history-page" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home-page')">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            
+            <div class="section-title">
+                <i class="fas fa-history"></i> উত্তোলনের ইতিহাস
+            </div>
+            
+            <div id="history-list">
+                <!-- History items will be dynamically added here -->
+                <div class="history-item">
+                    <div class="history-date">কোনও ইতিহাস নেই</div>
+                    <div class="history-details">
+                        <span>আপনার প্রথম উত্তোলন সম্পূর্ণ করুন</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Referral Page -->
+    <div id="referral-page" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home-page')">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            
+            <div class="section-title">
+                <i class="fas fa-users"></i> রেফার করুন এবং উপার্জন করুন
+            </div>
+            
+            <div class="referral-box">
+                <p>আপনার বন্ধুদের আমন্ত্রণ করুন এবং তাদের উপার্জনের 5% কমিশন পান!</p>
+                
+                <div class="referral-code" id="referral-code">
+                    https://t.me/TakaGhor_OfficialBot?start=ref-USER123
+                </div>
+                
+                <button class="btn" onclick="copyReferralCode()">
+                    <i class="fas fa-copy"></i> রেফারেল লিংক কপি করুন
+                </button>
+                
+                <div class="referral-stats">
+                    <div class="stat-box">
+                        <div class="stat-number" id="total-referrals">0</div>
+                        <div class="stat-label">মোট রেফারেল</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" id="referral-earnings">0</div>
+                        <div class="stat-label">রেফারেল উপার্জন</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="note-box">
+                <div class="note-title">এটি কীভাবে কাজ করে</div>
+                <p>1. আপনার রেফারেল লিংক বন্ধুদের সাথে শেয়ার করুন</p>
+                <p>2. তারা আপনার লিংক ব্যবহার করে সাইন আপ করলে, তারা আপনার রেফারেল হয়ে যাবে</p>
+                <p>3. প্রতিটি বৈধ রেফারেলের জন্য আপনি 250 পয়েন্ট পাবেন</p>
+                <p>4. আপনি তাদের উপার্জনের 5% লাইফটাইম কমিশন পাবেন</p>
+            </div>
+            
+            <div class="warning-box">
+                <div class="warning-title">সতর্কতা</div>
+                <p>ফেইক রেফারেল করলে আপনার একাউন্ট স্থায়ীভাবে ব্যান হয়ে যাবে</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reset Confirmation Modal -->
+    <div id="reset-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('reset-modal')">&times;</span>
+            <div class="modal-title">
+                <i class="fas fa-exclamation-triangle"></i> রিসেট নিশ্চিত করুন
+            </div>
+            <p>আপনি কি নিশ্চিত যে আপনি আপনার সমস্ত অগ্রগতি রিসেট করতে চান? এই কর্মটি অপরিবর্তনীয়।</p>
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button class="btn btn-danger" style="flex: 1;" onclick="confirmReset()">হ্যাঁ, রিসেট করুন</button>
+                <button class="btn btn-secondary" style="flex: 1;" onclick="closeModal('reset-modal')">বাতিল</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Withdrawal Confirmation Modal -->
+    <div id="withdraw-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('withdraw-modal')">&times;</span>
+            <div class="modal-title">
+                <i class="fas fa-check-circle"></i> উত্তোলন সফল!
+            </div>
+            <p>আপনার উত্তোলনের অনুরোধ সফলভাবে জমা দেওয়া হয়েছে।</p>
+            <p>আপনার পয়েন্ট টাকায় রূপান্তরিত হবে এবং 24-48 ঘন্টার মধ্যে আপনার অ্যাকাউন্টে পাঠানো হবে।</p>
+            <button class="btn btn-success" style="width: 100%; margin-top: 20px;" onclick="closeModal('withdraw-modal')">
+                ঠিক আছে
+            </button>
+        </div>
+    </div>
+    
+    <!-- Task Completion Modal -->
+    <div id="task-complete-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('task-complete-modal')">&times;</span>
+            <div class="modal-title">
+                <i class="fas fa-check-circle"></i> টাস্ক সম্পূর্ণ!
+            </div>
+            <p>আপনি সফলভাবে টাস্কটি সম্পূর্ণ করেছেন এবং 50 পয়েন্ট উপার্জন করেছেন।</p>
+            <button class="btn btn-success" style="width: 100%; margin-top: 20px;" onclick="closeModal('task-complete-modal')">
+                ঠিক আছে
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // App state
+        let appState = {
+            balance: 0,
+            adsWatched: 0,
+            tasksCompleted: 0,
+            totalReferrals: 0,
+            referralEarnings: 0,
+            withdrawalHistory: [],
+            completedTasks: [],
+            userId: 'USER' + Math.floor(1000 + Math.random() * 9000),
+            countdownInterval: null,
+            videoCountdownInterval: null,
+            activeTaskId: null
+        };
+        
+        // YouTube video URL with corrected parameters
+        const YOUTUBE_VIDEO_URL = "https://www.youtube.com/embed/vAdLmxkvFiM?autoplay=1&loop=1&mute=1&controls=0&playlist=vAdLmxkvFiM&rel=0&modestbranding=1";
+        
+        // Initialize the app
+        function initApp() {
+            // Load saved state from localStorage
+            const savedState = localStorage.getItem('takaGhorState');
+            if (savedState) {
+                appState = JSON.parse(savedState);
+            }
+            
+            // Update UI
+            updateBalance();
+            updateAdsWatched();
+            updateReferralStats();
+            generateTasks();
+            updateReferralLink();
+            showPage('home-page');
+            
+            // Load banner ad for tasks page
+            loadBannerAd();
+        }
+        
+        // Load banner ad for tasks page
+        function loadBannerAd() {
+            const bannerContainer = document.querySelector('.banner-ad-container');
+            const placeholder = document.getElementById('banner-ad-placeholder');
+            
+            // Create banner ad elements
+            const bannerAdScript1 = document.createElement('script');
+            bannerAdScript1.type = 'text/javascript';
+            bannerAdScript1.textContent = `atOptions = { 
+                'key' : '35343d3cdda4c6c0a88a5c8db40c6931',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {} 
+            };`;
+            
+            const bannerAdScript2 = document.createElement('script');
+            bannerAdScript2.type = 'text/javascript';
+            bannerAdScript2.src = '//www.highperformanceformat.com/35343d3cdda4c6c0a88a5c8db40c6931/invoke.js';
+            
+            // Remove placeholder and add ad scripts
+            setTimeout(() => {
+                placeholder.remove();
+                bannerContainer.appendChild(bannerAdScript1);
+                bannerContainer.appendChild(bannerAdScript2);
+            }, 1500);
+        }
+        
+        // Update referral link with user ID
+        function updateReferralLink() {
+            document.getElementById('referral-code').textContent = 
+                `https://t.me/TakaGhor_OfficialBot?start=ref-${appState.userId}`;
+        }
+        
+        // Show a specific page
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Show the requested page
+            document.getElementById(pageId).style.display = 'block';
+            
+            // Special handling for tasks page
+            if (pageId === 'tasks-page') {
+                updateTasksList();
+                // Reset video container
+                document.getElementById('youtube-video').src = "";
+                document.getElementById('video-countdown').textContent = "30";
+                document.getElementById('video-countdown').style.display = "block";
+                document.getElementById('claim-btn').style.display = "none";
+                document.getElementById('video-overlay').style.display = 'flex';
+            }
+            
+            // Special handling for history page
+            if (pageId === 'history-page') {
+                updateHistoryList();
+            }
+            
+            // Reset countdown timer when leaving tasks page
+            if (pageId !== 'tasks-page' && appState.countdownInterval) {
+                clearInterval(appState.countdownInterval);
+                appState.countdownInterval = null;
+                document.getElementById('countdown-timer').textContent = '30';
+                document.getElementById('claim-btn').style.display = 'none';
+            }
+        }
+        
+        // Start the YouTube video
+        function startVideo() {
+            document.getElementById('youtube-video').src = YOUTUBE_VIDEO_URL;
+            document.getElementById('video-overlay').style.display = 'none';
+            startVideoCountdown();
+        }
+        
+        // Update balance display
+        function updateBalance() {
+            document.getElementById('balance-amount').textContent = `${appState.balance} Points`;
+            
+            // Update progress bar
+            const progressPercent = Math.min((appState.balance / 5000) * 100, 100);
+            document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+            document.getElementById('progress-text').textContent = `${appState.balance}/5000 Points to withdraw`;
+        }
+        
+        // Update ads watched display
+        function updateAdsWatched() {
+            document.getElementById('ads-watched').textContent = appState.adsWatched;
+        }
+        
+        // Update referral stats
+        function updateReferralStats() {
+            document.getElementById('total-referrals').textContent = appState.totalReferrals;
+            document.getElementById('referral-earnings').textContent = appState.referralEarnings;
+        }
+        
+        // Show Monetag ad
+        function showMonetagAd(zoneId) {
+            if (appState.adsWatched >= 500) {
+                alert('আপনি আজকের জন্য সর্বাধিক বিজ্ঞাপন দেখেছেন।');
+                return;
+            }
+            
+            // Get the ad function based on zone ID
+            const adFunction = window[`show_${zoneId}`];
+            
+            if (typeof adFunction === 'function') {
+                adFunction().then(() => {
+                    // Add points after ad completes
+                    appState.adsWatched++;
+                    appState.balance += 100;
+                    
+                    // Save state
+                    saveState();
+                    
+                    // Update UI
+                    updateBalance();
+                    updateAdsWatched();
+                    
+                    // Show completion message
+                    const message = document.getElementById('ad-completion-message');
+                    message.style.display = 'block';
+                    
+                    // Hide message after animation
+                    setTimeout(() => {
+                        message.style.display = 'none';
+                    }, 3000);
+                }).catch(error => {
+                    console.error('Ad error:', error);
+                    alert('বিজ্ঞাপন লোড করতে সমস্যা হয়েছে। দয়া করে আবার চেষ্টা করুন।');
+                });
+            } else {
+                alert('বিজ্ঞাপন ফাংশন পাওয়া যায়নি। দয়া করে পৃষ্ঠাটি রিফ্রেশ করুন।');
+            }
+        }
+        
+        // Generate tasks
+        function generateTasks() {
+            if (appState.completedTasks.length === 0) {
+                for (let i = 1; i <= 50; i++) {
+                    appState.completedTasks.push({
+                        id: i,
+                        completed: false,
+                        claimed: false,
+                        lastCompleted: 0
+                    });
+                }
+                saveState();
+            }
+        }
+        
+        // Update tasks list
+        function updateTasksList() {
+            const tasksList = document.getElementById('tasks-list');
+            tasksList.innerHTML = '';
+            
+            appState.completedTasks.forEach(task => {
+                const taskItem = document.createElement('div');
+                taskItem.className = 'task-item';
+                
+                // Check if task can be completed (24 hours passed)
+                const now = Date.now();
+                const canComplete = now - task.lastCompleted > 24 * 60 * 60 * 1000;
+                
+                taskItem.innerHTML = `
+                    <div class="task-info">
+                        <div class="task-title">টাস্ক #${task.id}</div>
+                        <div class="task-reward">পুরস্কার: 50 পয়েন্ট</div>
+                        ${task.completed ? `<div class="task-status">সম্পূর্ণ হয়েছে</div>` : ''}
+                        ${!task.completed && !canComplete ? `<div class="task-status">পরবর্তী চেষ্টা: ${formatRemainingTime(task.lastCompleted)}</div>` : ''}
+                    </div>
+                    <button class="btn btn-success" onclick="startTask(${task.id})" ${!canComplete ? 'disabled' : ''}>
+                        <i class="fas fa-play"></i> শুরু করুন
+                    </button>
+                `;
+                tasksList.appendChild(taskItem);
+            });
+            
+            if (tasksList.children.length === 0) {
+                tasksList.innerHTML = '<p style="text-align: center; padding: 20px;">কোন টাস্ক নেই। পরে আবার চেক করুন!</p>';
+            }
+        }
+        
+        // Format remaining time
+        function formatRemainingTime(lastCompleted) {
+            const now = Date.now();
+            const diff = now - lastCompleted;
+            const remaining = 24 * 60 * 60 * 1000 - diff;
+            
+            const hours = Math.floor(remaining / (1000 * 60 * 60));
+            const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+            
+            return `${hours} ঘন্টা ${minutes} মিনিট`;
+        }
+        
+        // Start a task
+        function startTask(taskId) {
+            // Set the active task
+            appState.activeTaskId = taskId;
+            
+            // Show the video overlay
+            document.getElementById('video-overlay').style.display = 'flex';
+            
+            // Hide claim button initially
+            document.getElementById('claim-btn').style.display = 'none';
+            
+            // Disable the task button for 24 hours
+            const task = appState.completedTasks.find(t => t.id === taskId);
+            if (task) {
+                task.lastCompleted = Date.now();
+                saveState();
+            }
+            
+            showPage('tasks-page');
+        }
+        
+        // Start video countdown timer
+        function startVideoCountdown() {
+            let timeLeft = 30;
+            const timerElement = document.getElementById('video-countdown');
+            
+            // Clear any existing interval
+            if (appState.videoCountdownInterval) {
+                clearInterval(appState.videoCountdownInterval);
+            }
+            
+            timerElement.style.display = "block";
+            timerElement.textContent = timeLeft;
+            
+            appState.videoCountdownInterval = setInterval(() => {
+                timeLeft--;
+                timerElement.textContent = timeLeft;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(appState.videoCountdownInterval);
+                    appState.videoCountdownInterval = null;
+                    document.getElementById('claim-btn').style.display = 'inline-block';
+                    timerElement.style.display = 'none';
+                }
+            }, 1000);
+        }
+        
+        // Complete a task
+        function completeTask() {
+            if (appState.videoCountdownInterval) {
+                clearInterval(appState.videoCountdownInterval);
+                appState.videoCountdownInterval = null;
+            }
+            document.getElementById('youtube-video').src = "";
+            document.getElementById('video-overlay').style.display = 'flex';
+            showPage('home-page');
+        }
+        
+        // Claim task reward
+        function claimTaskReward() {
+            if (!appState.activeTaskId) return;
+            
+            // Find the task
+            const task = appState.completedTasks.find(t => t.id === appState.activeTaskId);
+            if (task && !task.completed) {
+                task.completed = true;
+                task.claimed = true;
+                appState.balance += 50;
+                appState.tasksCompleted++;
+                
+                // Save state
+                saveState();
+                
+                // Update UI
+                updateBalance();
+                updateTasksList();
+                
+                // Show completion modal
+                showModal('task-complete-modal');
+                
+                // Reset video
+                document.getElementById('youtube-video').src = "";
+                document.getElementById('video-overlay').style.display = 'flex';
+                
+                // Reset active task
+                appState.activeTaskId = null;
+            }
+        }
+        
+        // Show withdrawal confirmation
+        function confirmWithdrawal() {
+            const method = document.getElementById('payment-method').value;
+            const account = document.getElementById('account-number').value;
+            const amount = parseInt(document.getElementById('withdraw-amount').value);
+            
+            if (!method) {
+                alert('একটি পেমেন্ট পদ্ধতি নির্বাচন করুন');
+                return;
+            }
+            
+            if (!account) {
+                alert('আপনার অ্যাকাউন্ট নম্বর লিখুন');
+                return;
+            }
+            
+            if (!amount || amount < 5000) {
+                alert('ন্যূনতম উত্তোলনের পরিমাণ 5000 পয়েন্ট');
+                return;
+            }
+            
+            if (amount > appState.balance) {
+                alert('আপনার পর্যাপ্ত পয়েন্ট নেই');
+                return;
+            }
+            
+            // Process withdrawal
+            appState.balance -= amount;
+            
+            // Add to history
+            const historyItem = {
+                date: new Date().toLocaleDateString(),
+                method: method,
+                account: account,
+                amount: amount,
+                points: amount,
+                status: 'Pending'
+            };
+            
+            appState.withdrawalHistory.unshift(historyItem);
+            
+            // Save state
+            saveState();
+            
+            // Update UI
+            updateBalance();
+            
+            // Show success modal
+            showModal('withdraw-modal');
+            
+            // Reset form
+            document.getElementById('payment-method').value = '';
+            document.getElementById('account-number').value = '';
+            document.getElementById('withdraw-amount').value = '';
+        }
+        
+        // Update history list
+        function updateHistoryList() {
+            const historyList = document.getElementById('history-list');
+            historyList.innerHTML = '';
+            
+            if (appState.withdrawalHistory.length === 0) {
+                historyList.innerHTML = `
+                    <div class="history-item">
+                        <div class="history-date">কোনও ইতিহাস নেই</div>
+                        <div class="history-details">
+                            <span>আপনার প্রথম উত্তোলন সম্পূর্ণ করুন</span>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            appState.withdrawalHistory.forEach(item => {
+                const historyItem = document.createElement('div');
+                historyItem.className = 'history-item';
+                historyItem.innerHTML = `
+                    <div class="history-date">${item.date}</div>
+                    <div class="history-details">
+                        <span>${item.method.toUpperCase()}: ${item.account}</span>
+                        <span>${item.points} পয়েন্ট (${item.amount} টাকা)</span>
+                    </div>
+                    <div class="history-details">
+                        <span>স্ট্যাটাস: ${item.status}</span>
+                    </div>
+                `;
+                historyList.appendChild(historyItem);
+            });
+        }
+        
+        // Copy referral code
+        function copyReferralCode() {
+            const code = document.getElementById('referral-code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('রেফারেল লিংক ক্লিপবোর্ডে কপি করা হয়েছে!');
+            });
+        }
+        
+        // Reset the app
+        function resetApp() {
+            showModal('reset-modal');
+        }
+        
+        // Confirm reset
+        function confirmReset() {
+            appState = {
+                balance: 0,
+                adsWatched: 0,
+                tasksCompleted: 0,
+                totalReferrals: 0,
+                referralEarnings: 0,
+                withdrawalHistory: [],
+                completedTasks: [],
+                userId: 'USER' + Math.floor(1000 + Math.random() * 9000)
+            };
+            
+            // Regenerate tasks
+            generateTasks();
+            
+            // Update referral link
+            updateReferralLink();
+            
+            // Save state
+            saveState();
+            
+            // Update UI
+            updateBalance();
+            updateAdsWatched();
+            updateReferralStats();
+            updateTasksList();
+            updateHistoryList();
+            
+            // Close modal
+            closeModal('reset-modal');
+            
+            // Show home page
+            showPage('home-page');
+        }
+        
+        // Show a modal
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+        
+        // Close a modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // Save app state to localStorage
+        function saveState() {
+            localStorage.setItem('takaGhorState', JSON.stringify(appState));
+        }
+        
+        // Initialize the app when the page loads
+        window.onload = initApp;
+    </script>
+</body>
+</html>
